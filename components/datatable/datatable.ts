@@ -622,6 +622,10 @@ export class DataTable implements AfterViewChecked,AfterViewInit,AfterContentIni
 
                     if (value1 instanceof String && value2 instanceof String)
                         result = value1.localeCompare(value2);
+                    else if (value1 === null)
+                        result = -1
+                    else if (value2 === null)
+                        result = 1
                     else
                         result = (value1 < value2) ? -1 : (value1 > value2) ? 1 : 0;
 
